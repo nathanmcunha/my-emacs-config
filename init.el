@@ -1,4 +1,4 @@
-;;;  ________                                                _______                 __                            __
+;t;;  ________                                                _______                 __                            __
 ;;; /        |                                              /       \               /  |                          /  |
 ;;; $$$$$$$$/ _____  ____   ______   _______  _______       $$$$$$$  | ______   ____$$ | ______   ______   _______$$ |   __
 ;;; $$ |__   /     \/    \ /      \ /       |/       |      $$ |__$$ |/      \ /    $$ |/      \ /      \ /       $$ |  /  |
@@ -284,16 +284,6 @@ If the new path's directories does not exist, create them."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(use-package doom-themes
-  :ensure t 
-  :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
-  ;; Sets the default theme to load!!! 
-  (load-theme 'doom-moonlight t)
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
 
 (use-package vterm
     )

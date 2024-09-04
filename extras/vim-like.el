@@ -25,15 +25,15 @@
     (evil-mode))
 
 
-;;(use-package evil-collection
- ;; :after evil
- ;; :config
- ;; (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
- ;; (evil-collection-init))
+(use-package evil-collection
+  :after evil
+  :config
+  (add-to-list 'evil-collection-mode-list 'help) ;; evilify help mode
+  (evil-collection-init))
 
-;;(setq evil-collection-setup-minibuffer t)
+(setq evil-collection-setup-minibuffer t)
 
-;;(use-package evil-commentary
-  ;;:init
-  ;;(evil-commentary-mode)
-;;)
+(use-package evil-commentary
+  :init
+  (evil-commentary-mode)
+)
