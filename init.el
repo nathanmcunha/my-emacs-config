@@ -285,5 +285,4 @@ If the new path's directories does not exist, create them."
  ;; If there is more than one, they won't work right.
  )
 
-(use-package vterm
-    )
+(use-package vterm)

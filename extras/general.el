@@ -2,25 +2,27 @@
   :config
   (general-evil-setup)
   ;; set up 'SPC' as the global leader key
-  (general-create-definer nathan/leader-keys
+ (general-create-definer nathan/leader-keys
     :states '(normal insert visual emacs)
     :keymaps 'override
     :prefix "SPC" ;; set leader
     :global-prefix "M-SPC") ;; access leader in insert mode
 
   (nathan/leader-keys
-    "TAB TAB" '(comment-line :wk "Comment lines")) 
+    "TAB TAB" '(comment-line :wk "Comment lines")
+    ) 
 
+  
   ;; Buffer/bookmarks
   (nathan/leader-keys
     "b" '(:ignore t :wk "Buffers/Bookmarks")
     "b b" '(consult-buffer :wk "Switch to buffer")
-    "b p " '(consult-project-buffer :wk "Switch to buffer")
     "b i" '(ibuffer :wk "Ibuffer")
     "b k" '(kill-current-buffer :wk "Kill current buffer")
+    "b d" '(bury-buffer :wk "Bury Buffer")
     "b s" '(basic-save-buffer :wk "Save buffer")
-    "b l" '(list-bookmarks :wk "List bookmarks")
-    "b m" '(bookmark-set :wk "Set bookmark")
+    "b n" '(next-buffer :wk "Next buffer")
+    "b p" '(previous-buffer :wk "Previous buffer")
     "q q" '(save-buffers-kill-terminal :wk "Quit emacs"))
 
   ;; Files
@@ -30,6 +32,11 @@
     "f f" '(find-file :wk "Find file")
     "f p" '(nathan/emacs-personal-files :wk "Open personal config files")
     "f c" '(nathan/open-emacs-config :wk "Open emacs config.org"))
+
+  (nathan/leader-keys
+    "p" '(:ignore t :wk "Project")
+    "p f" '(project-find-file :wk "Project")
+    )
 
   ;; Helpers
   (nathan/leader-keys
@@ -54,8 +61,12 @@
 
 (global-set-key (kbd "C-=") 'text-scale-increase) 
 (global-set-key (kbd "C--") 'text-scale-decrease)
+;;(global-set-key (kbd "SPC SPC") 'project-find-file)
 
   (defun nathan/emacs-personal-files ()
     (interactive)
     (let ((default-directory "~/.emacs.d"))
       (call-interactively 'find-file)))
+
+
+
