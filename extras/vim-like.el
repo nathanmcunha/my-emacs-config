@@ -21,6 +21,7 @@
           evil-want-keybinding nil
           evil-vsplit-window-right t
           evil-split-window-below t
+	  evil-collection-setup-minibuffer t
           evil-undo-system 'undo-redo)
     (evil-mode))
 
@@ -36,4 +37,8 @@
 (use-package evil-commentary
   :init
   (evil-commentary-mode)
-)
+  )
+
+(use-package casual-avy
+  :ensure t
+  :bind ("C-g" . casual-avy-tmenu))

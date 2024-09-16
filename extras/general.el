@@ -35,7 +35,9 @@
 
   (nathan/leader-keys
     "p" '(:ignore t :wk "Project")
-    "p f" '(project-find-file :wk "Project")
+    "p f" '(project-find-file :wk "Project find file")
+    "p b" '(consult-project-buffer :wk "Project Buffer")
+
     )
 
   ;; Helpers
@@ -67,6 +69,15 @@
     (interactive)
     (let ((default-directory "~/.emacs.d"))
       (call-interactively 'find-file)))
+
+(nathan/leader-keys
+  "y" '(:ignore t :wk "Yank")
+  "y l" '( consult-yank-from-kill-ring :wk "yank from Kill ring")
+  )
+
+(general-mmap
+  "K" 'helpful-at-point 
+  )
 
 
 

@@ -45,6 +45,10 @@
   ;; Narrowing lets you restrict results to certain groups of candidates
   (setq consult-narrow-key "<"))
 
+(dolist (src consult-buffer-sources)
+  (unless (eq src 'consult--source-buffer)
+    (set src (plist-put (symbol-value src) :hidden t))))
+
 (use-package embark
   :demand t
   :after avy
@@ -61,7 +65,7 @@
     t)
 
   ;; After invoking avy-goto-char-timer, hit "." to run embark at the next
-  ;; candidate you select
+;; candidate you select
   (setf (alist-get ?. avy-dispatch-alist) 'bedrock/avy-action-embark))
 
 (use-package embark-consult)
@@ -149,3 +153,6 @@
 (use-package wgrep
   :config
   (setq wgrep-auto-save-buffer t))
+
+
+(use-package helpful)
